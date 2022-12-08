@@ -7,7 +7,7 @@
 #   AppVolumes: 2111
 #
 # Desctiption:
-#   Setting AppVolumes instance after install with help of Selenium WebDriver
+#   Setting Primary(first) AppVolumes instance after install with help of Selenium WebDriver
 #   More information in the documentation https://www.selenium.dev/documentation/webdriver/
 
 import sys
@@ -21,6 +21,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support.ui import Select
 
+avm_primary_server_address = 'https://avm01.example.domain.com'
 wait_delay = 60 # Element search time
 wait_frequency = 2.5 # Frequency of element searching; Decrease on own risk - some stages may corrupt with error "element has zero size"
 separator = '\\'
@@ -161,7 +162,7 @@ options = webdriver.ChromeOptions()
 options.add_argument('--ignore-ssl-errors=yes')
 options.add_argument('--ignore-certificate-errors')
 driver = webdriver.Chrome(options=options)
-driver.get("https://cbq-avm-as01.msk.i-teco.ru/")
+driver.get(avm_primary_server_address)
 
 #Initialize ActionChain object
 actions = ActionChains(driver)
