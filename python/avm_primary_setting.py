@@ -1,9 +1,20 @@
+# Sctipted by:
+#   Po-temkin
+#
+# Tested on:
+#   Python: 3.11
+#   Selenium: 4.6.0
+#   AppVolumes: 2111
+#
+# Desctiption:
+#   Setting AppVolumes instance after install with help of Selenium WebDriver
+#   More information in the documentation https://www.selenium.dev/documentation/webdriver/
+
 import sys
 import time
 from inspect import currentframe, getframeinfo
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
-from selenium.common.exceptions import  StaleElementReferenceException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
