@@ -38,7 +38,6 @@ options = webdriver.ChromeOptions()
 options.add_argument('--ignore-ssl-errors=yes')
 options.add_argument('--ignore-certificate-errors')
 driver = webdriver.Chrome(options=options)
-driver.implicitly_wait(30)
 driver.get(avm_replica_server_address)
 
 actions = ActionChains(driver) # initialize ActionChain object
