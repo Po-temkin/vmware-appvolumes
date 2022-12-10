@@ -76,7 +76,7 @@ writable_backup_path = 'appvolumes/writables_backup' # Path to writables backup
 upload_all_templates = 1 # Uploading all templates
 
 #Vars for 'Settings' page
-ui_session_timeout = '15' # Timeout for web-session
+ui_session_timeout = 15 # Timeout for web-session
 non_domaint_entitles = 0 # 0 = 'Disallow'; 1 = 'Allow'
 writable_backup = 0 # 1 for enable writables backup
 writable_backup_interval = 7 # Backup frequency in days
@@ -592,7 +592,7 @@ else:
                 checkbox_define_by_id('sgroups_create_replicate_field', auto_replicate_apps)
 
                 #Selecting 'Distribution Strategy' option
-                option_select_by_index('sgroups_create_strategy_field',datastore_distribution_strategy)
+                option_select_by_index('sgroups_create_strategy_field', datastore_distribution_strategy)
 
                 #Moving to 'Template Storage' search
                 click_element_by_id('sgroups_create_template_field_chosen')
