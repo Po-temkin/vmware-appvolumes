@@ -4,6 +4,9 @@
 # Tested on:
 #   Python: 3.11
 #   Selenium: 4.6.0
+#   Webdriver-manager 3.8.5
+#   Chrome 108.0.5359.99
+#   ChromeDriver 109.0.5414.25
 #   AppVolumes: 2111
 #
 # Desctiption:
@@ -14,6 +17,8 @@ import sys
 import time
 from inspect import currentframe, getframeinfo
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
@@ -21,6 +26,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support.ui import Select
 
+chromedriver_path = '' # Path to ChromeDriver
 wait_delay = 60 # Element search time
 wait_frequency = 2.5 # Frequency of element searching; Decrease on own risk - some stages may corrupt with error "element has zero size"
 separator = '\\'
@@ -88,7 +94,7 @@ disable_ad_token_query = 0 # Disable (1) or enable (0) AD queries cache
 enable_to_any_os = 0 # Disable (0) or enable (1) ignoring difference between target OS and OS used for packaging
 
 #Vars for pop-up CEIP dialog
-popup_join_ceip = 0 # 1 to enable CEIP
+popup_join_ceip = 0 # Disable (0) or enable (1) CEIP
 
 #Vars for creating Storage group
 storage_group_name = 'Group' # Storage group name
@@ -159,10 +165,13 @@ def toggle_define(element_id, element_xpath, switch):
 
     return()
 
-options = webdriver.ChromeOptions()
-options.add_argument('--ignore-ssl-errors=yes')
-options.add_argument('--ignore-certificate-errors')
-driver = webdriver.Chrome(options=options)
+#Initialize WebDriver object
+driver_options = webdriver.ChromeOptions()
+driver_options.add_argument('--ignore-ssl-errors=yes')
+driver_options.add_argument('--ignore-certificate-errors')
+driver = webdriver.Chrome(service = Service(ChromeDriverManager().install()), options = driver_options) # Required webdriver-manager
+#driver_service = Service(chromedriver_path) # Required ChromeDriver
+#driver = webdriver.Chrome(service=driver_service, options=driver_options) Required ChromeDriver
 driver.get(avm_primary_server_address)
 
 #Initialize ActionChain object
@@ -176,7 +185,6 @@ time.sleep(30)
 driver.refresh()
 
 #Pushing 'Get Started" button
-#click_element_by_id('ft_getstarted')
 click_element_by_id('ft_getstarted')
 
 #License

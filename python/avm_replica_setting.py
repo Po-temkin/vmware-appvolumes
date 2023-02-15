@@ -5,6 +5,9 @@
 # Tested on:
 #   Python: 3.11
 #   Selenium: 4.6.0
+#   Webdriver-manager 3.8.5
+#   Chrome 108.0.5359.99
+#   ChromeDriver 109.0.5414.25
 #   AppVolumes: 2111
 #
 # Desctiption:
