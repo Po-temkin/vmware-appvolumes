@@ -171,7 +171,7 @@ driver_options.add_argument('--ignore-ssl-errors=yes')
 driver_options.add_argument('--ignore-certificate-errors')
 driver = webdriver.Chrome(service = Service(ChromeDriverManager().install()), options = driver_options) # Required webdriver-manager
 #driver_service = Service(chromedriver_path) # Required ChromeDriver
-#driver = webdriver.Chrome(service=driver_service, options=driver_options) Required ChromeDriver
+#driver = webdriver.Chrome(service=driver_service, options=driver_options) #Required ChromeDriver
 driver.get(avm_primary_server_address)
 
 #Initialize ActionChain object
