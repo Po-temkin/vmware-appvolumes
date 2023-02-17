@@ -4,11 +4,11 @@
 #
 # Tested on:
 #   Python: 3.11
-#   Selenium: 4.6.0
+#   Selenium: 4.6.0, 4.8.0
 #   Webdriver-manager 3.8.5
-#   Chrome 108.0.5359.99
-#   ChromeDriver 109.0.5414.25
-#   AppVolumes: 2111
+#   Chrome 108.0.5359.99, 110.0.5481.97 
+#   ChromeDriver 109.0.5414.25, 110.0.5481.97
+#   AppVolumes: 2111, 2212
 #
 # Desctiption:
 #   Setting Replica AppVolumes instance after install with help of Selenium WebDriver
