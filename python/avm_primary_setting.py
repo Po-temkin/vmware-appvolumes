@@ -194,7 +194,7 @@ try:
     wait.until(EC.element_to_be_clickable((By.ID, 'edit_license_btn')))
 except TimeoutException:
     driver.close()
-    sys.exit('Unable to locate element')
+    sys.exit('Unable to locate element: edit_license_btn')
 else:
     #Pushing 'Edit' button
     click_element_by_id('edit_license_btn')
@@ -212,7 +212,7 @@ else:
         wait.until(EC.element_to_be_clickable((By.ID, 'license_next_btn')))
     except:
         driver.close()
-        sys.exit('Unable to locate element')
+        sys.exit('Unable to locate element: license_next_btn')
     else:
         #Pushing 'Next' button on 'License' page
         click_element_by_id('license_next_btn')
@@ -223,7 +223,7 @@ try:
     wait.until(EC.element_to_be_clickable((By.ID, 'ad_domain_i')))
 except TimeoutException:
     driver.close()
-    sys.exit()
+    sys.exit('Unable to locate element: ad_domain_i')
 else:
     #Filling 'Active Directory Domain Name' field
     fill_field_by_id('ad_domain_i', ad_domain_name)
@@ -256,7 +256,7 @@ else:
         wait.until(EC.element_to_be_clickable((By.ID, 'ad_next_button')))
     except TimeoutException:
         driver.close()
-        sys.exit('Unable to locate element')
+        sys.exit('Unable to locate element: ad_next_button')
     else:
         #Pushing 'Next' button on 'AD Domain' page
         click_element_by_id('ad_next_button')
@@ -267,7 +267,7 @@ try:
     wait.until(EC.element_to_be_clickable((By.ID, 'role')))
 except TimeoutException:
     driver.close()
-    sys.exit('Unable to locate element')
+    sys.exit('Unable to locate element: role')
 else:
     #Selecting 'Role' option
     option_select_by_index('role', admin_role)
@@ -289,7 +289,7 @@ else:
         wait.until(EC.element_to_be_clickable((By.ID, 'ra_save_or_update_button')))
     except TimeoutException:
         driver.close()
-        sys.exit('Unable to locate element')
+        sys.exit('Unable to locate element: ra_save_or_update_button')
     else:
         #Pushing 'Assign' Button
         click_element_by_id('ra_save_or_update_button')
@@ -299,7 +299,7 @@ else:
             wait.until(EC.element_to_be_clickable((By.ID, 'roles_next_button')))
         except TimeoutException:
             driver.close()
-            sys.exit('Unable to locate element')
+            sys.exit('Unable to locate element: roles_next_button')
         else:
             #Pushing 'Next' button on 'Admin Roles' page
             click_element_by_id('roles_next_button')
@@ -314,7 +314,7 @@ for index, machine_manager in enumerate(machine_managers_array):
             wait.until(EC.element_to_be_clickable((By.ID, 'add_machine_manager_btn')))
         except TimeoutException:
             driver.close()
-            sys.exit('Unable to locate element')
+            sys.exit('Unable to locate element: add_machine_manager_btn')
         else:
             #Pushing 'Register Machine Manager' button
             click_element_by_id('add_machine_manager_btn')
@@ -324,7 +324,7 @@ for index, machine_manager in enumerate(machine_managers_array):
         wait.until(EC.element_to_be_clickable((By.ID, 'hyp_hostname_i')))
     except TimeoutException:
         driver.close()
-        sys.exit('Unable to locate element')
+        sys.exit('Unable to locate element: hyp_hostname_i')
     else:
         #Filling 'Hostname' field
         fill_field_by_id('hyp_hostname_i', machine_manager)
@@ -375,7 +375,7 @@ for index, machine_manager in enumerate(machine_managers_array):
                 wait.until(EC.element_to_be_clickable((By.ID, 'dialog_confirm_hypervisor_change')))
             except TimeoutException:
                 driver.close()
-                sys.exit('Unable to locate element')
+                sys.exit('Unable to locate element: dialog_confirm_hypervisor_change')
             else:
                 #Pushing 'Accept' button; Confirming certificate
                 click_element_by_id('dialog_confirm_hypervisor_change')
@@ -385,7 +385,7 @@ try:
     wait.until(EC.element_to_be_clickable((By.ID, 'ft_next_btn')))
 except TimeoutException:
     driver.close()
-    sys.exit('Unable to locate element')
+    sys.exit('Unable to locate element: ft_next_btn')
 else:
     #Pushing 'Next' button on 'Machine Managers' page
     click_element_by_id('ft_next_btn')
@@ -397,7 +397,7 @@ try:
     wait.until(EC.element_to_be_clickable((By.ID, 'p_datastores_sel_chosen')))
 except TimeoutException:
     driver.close()
-    sys.exit('Unable to locate element')
+    sys.exit('Unable to locate element: p_datastores_sel_chosen')
 else:
     #Moving to 'Default Storage Location' search field
     click_element_by_id('p_datastores_sel_chosen')
@@ -441,7 +441,7 @@ else:
         wait.until(EC.element_to_be_clickable((By.ID, 'dialog_set_datastore')))
     except TimeoutException:
         driver.close()
-        sys.exit('Unable to locate element')
+        sys.exit('Unable to locate element: dialog_set_datastore')
     else:
         #Pushing 'Set defaults' button; Confirming tamplates import in background
         click_element_by_id('dialog_set_datastore')
@@ -451,7 +451,7 @@ else:
             wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="apptemplate_list_table"]/tbody/tr[1]/td[5]/input')))
         except TimeoutException:
             driver.close()
-            sys.exit('Unable to locate element')
+            sys.exit('Unable to locate element: //*[@id="apptemplate_list_table"]/tbody/tr[1]/td[5]/input')
         else:
             #Defining all templates checkbox
             checkbox_define_by_id('apptemplate_list_check_all', upload_all_templates)
@@ -464,7 +464,7 @@ else:
                 wait.until(EC.element_to_be_clickable((By.ID, 'dialog_prepackaged_volumes')))
             except TimeoutException:
                 driver.close()
-                sys.exit('Unable to locate element')
+                sys.exit('Unable to locate element: dialog_prepackaged_volumes')
             else:
                 #Pushing 'Upload' button; Confirming upload
                 click_element_by_id('dialog_prepackaged_volumes')
@@ -475,7 +475,7 @@ try:
     wait.until(EC.element_to_be_clickable((By.ID, 'session_timeout')))
 except TimeoutException:
     driver.close()
-    sys.exit('Unable to locate element')
+    sys.exit('Unable to locate element: session_timeout')
 else:
     #Filling 'UI Session Timeout' field
     fill_field_by_id('session_timeout', ui_session_timeout)
@@ -524,7 +524,7 @@ else:
             wait.until(EC.element_to_be_clickable((By.ID, 'info_ok_button')))
         except TimeoutException:
             driver.close()
-            sys.exit('Unable to locate element')
+            sys.exit('Unable to locate element: info_ok_button')
         else:
             #Pushing 'OK' button
             click_element_by_id('info_ok_button')
@@ -533,7 +533,7 @@ else:
                 wait.until(EC.element_to_be_clickable((By.ID, 'settings_save_button')))
             except:
                 driver.close()
-                sys.exit('Unable to locate element')
+                sys.exit('Unable to locate element: settings_save_button')
 
     #Pushing 'Save' button on 'Settings' page
     click_element_by_id('settings_save_button')
@@ -544,7 +544,7 @@ try:
     wait.until(EC.element_to_be_clickable((By.ID, 'dialog_checkbox')))
 except TimeoutException:
     driver.close()
-    sys.exit('Unable to locate element')
+    sys.exit('Unable to locate element: dialog_checkbox')
 else:
     #Unchecking 'CEIP' checkbox
     checkbox_define_by_id('dialog_checkbox', popup_join_ceip)
@@ -557,7 +557,7 @@ try:
     wait.until(EC.element_to_be_clickable((By.ID, 'infrastructure_btn')))
 except TimeoutException:
     driver.close()
-    sys.exit('Unable to locate element')
+    sys.exit('Unable to locate element: infrastructure_btn')
 else:
     #Moving to 'Infrastructure' page
     click_element_by_id('infrastructure_btn')
@@ -567,7 +567,7 @@ else:
         wait.until(EC.element_to_be_clickable((By.ID, 'ui-id-7')))
     except TimeoutException:
         driver.close()
-        sys.exit('Unable to locate element')
+        sys.exit('Unable to locate element: ui-id-7')
     else:
         #Moving to 'Storage Groups' page
         click_element_by_id('ui-id-7')
@@ -577,7 +577,7 @@ else:
             wait.until(EC.element_to_be_clickable((By.ID, 'sgroups_start_create_button')))
         except TimeoutException:
             driver.close()
-            sys.exit('Unable to locate element')
+            sys.exit('Unable to locate element: sgroups_start_create_button')
         else:
             #Creating Storage Groups
             #Pusshing 'Create Storage Group' button
@@ -588,7 +588,7 @@ else:
                 wait.until(EC.element_to_be_clickable((By.ID, 'sgroups_create_name_field')))
             except TimeoutException:
                 driver.close()
-                sys.exit('Unable to locate element')
+                sys.exit('Unable to locate element: sgroups_create_name_field')
             else:
                 #Filling 'Group Name' field
                 fill_field_by_id('sgroups_create_name_field', storage_group_name)
@@ -636,4 +636,4 @@ else:
 
 #End
 driver.close()
-sys.exit('Complete')
+sys.exit('Execution successfully completed')
