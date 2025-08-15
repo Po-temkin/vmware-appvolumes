@@ -64,9 +64,9 @@ mount_esxi_username = '' # Used for direct connections; Define if mount_esxi = 0
 mount_esxi_password = '' # Used for direct connections; Define if mount_esxi = 0; Must be the same on every ESXi host server
 mount_local = 0 # Prioritize volumes available on locally attached storage
 mount_queue = 1 # Disable (0) or enable (1) shared queues
-mount_async = 1 # Disable (0) or enable (1) wait of mount request completion; moout_queue = 1 required
-mount_throttle = 1 # Disable (0) or enable (1) queue throttle; moout_queue = 1 required
-maximun_operations = 5 # Number of concurrent mount operations per queue; moout_throttle = 1 required
+mount_async = 1 # Disable (0) or enable (1) wait of mount request completion; mount_queue = 1 required
+mount_throttle = 1 # Disable (0) or enable (1) queue throttle; mount_queue = 1 required
+maximum_operations = 5 # Number of concurrent mount operations per queue; mount_throttle = 1 required
 confirm_untrusred_cert = 1 # 0 if vCS certificate is trusted
 
 #Vars for 'Storage' page
@@ -361,9 +361,9 @@ for index, machine_manager in enumerate(machine_managers_array):
             #Defining 'Mount Throttle'
             checkbox_define_by_id('mount_throttle', mount_throttle)
 
-            #Filling maximum opetations field
+            #Filling maximum operations field
             if mount_throttle == 1:
-                fill_field_by_id('concurrent_reconfigs', maximun_operations)
+                fill_field_by_id('concurrent_reconfigs', maximum_operations)
 
         #Pushing 'Save' button
         click_element_by_id('hyp_config_save_button')
